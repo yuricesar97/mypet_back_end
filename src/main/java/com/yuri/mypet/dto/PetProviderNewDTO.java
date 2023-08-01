@@ -1,15 +1,11 @@
 package com.yuri.mypet.dto;
 
-import java.io.Serializable;
+import com.yuri.mypet.service.validation.JuridicoInsert;
 
 import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-
-import org.hibernate.validator.constraints.Length;
-
-
-import com.yuri.mypet.service.validation.JuridicoInsert;
+import java.io.Serializable;
 
 @JuridicoInsert
 public class PetProviderNewDTO implements Serializable {
@@ -17,14 +13,12 @@ public class PetProviderNewDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@NotEmpty(message = "Prenchimento obrigatório")
-	@Length(min = 5, max = 120, message = "O tamanho deve ser entre 5 e 120 caracteres")
 	private String razaoSocial;
 
 	@NotEmpty(message = "Preechimento obrigatório")
 	@Email(message = "Email inválido")
 	private String email;
 
-	@NotEmpty(message = "Preechimento obrigatório")
 	private String cpf;
 
 	private Integer tipoPerfil;
@@ -33,15 +27,12 @@ public class PetProviderNewDTO implements Serializable {
 	@NotEmpty(message = "Preechimento obrigatório")
 	private String senha;
 
-	@NotEmpty(message = "Preechimento obrigatório")
 	private String logradouro;
 	
 
-	@NotEmpty(message = "Preechimento obrigatório")
 	private String numero;
 	private String complemento;
 
-	@NotEmpty(message = "Preechimento obrigatório")
 	private String cep;
 
 	private String bairro;

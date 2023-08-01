@@ -1,7 +1,6 @@
 package com.yuri.mypet.dto;
 
 import com.yuri.mypet.service.validation.ClienteInsert;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Column;
 import javax.validation.constraints.Email;
@@ -19,14 +18,11 @@ public class PetClientNewDTO implements Serializable {
 	@Email(message = "Email inválido")
 	private String email;
 
-	@NotEmpty(message = "Prenchimento obrigatório")
-	@Length(min = 5, max = 120, message = "O tamanho deve ser entre 5 e 120 caracteres")
 	private String nomeCompleto;
 
 	private boolean petWalker = false;
 	private String descricao;
 
-	@NotEmpty(message = "Preechimento obrigatório")
 	private String cpf;
 
 	private String DataNascimento;
@@ -37,12 +33,10 @@ public class PetClientNewDTO implements Serializable {
 	@NotEmpty(message = "Preechimento obrigatório")
 	private String senha;
 
-	@NotEmpty(message = "Preechimento obrigatório")
 
 	private String logradouro;
-	@NotEmpty(message = "Preechimento obrigatório")
 
-	@NotEmpty(message = "Preechimento obrigatório")
+
 	private String numero;
 	private String complemento;
 	private String bairro;
