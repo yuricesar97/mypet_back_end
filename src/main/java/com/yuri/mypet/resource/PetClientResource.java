@@ -1,30 +1,21 @@
 package com.yuri.mypet.resource;
 
-import java.net.URI;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import javax.validation.Valid;
-import javax.websocket.server.PathParam;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import com.yuri.mypet.domain.PetClient;
 import com.yuri.mypet.dto.PetClientDTO;
 import com.yuri.mypet.dto.PetClientNewDTO;
 import com.yuri.mypet.service.PetClientService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import javax.validation.Valid;
+import java.net.URI;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/pessoafisica")
@@ -36,7 +27,7 @@ public class PetClientResource {
 
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET) // para bater em um end pont com id
-	public ResponseEntity<PetClient> buscar(@PathVariable Integer id) {
+	 ResponseEntity<PetClient> buscar(@PathVariable Integer id) {
 		PetClient obj = service.find(id);
 		return ResponseEntity.ok().body(obj);
 	}
