@@ -156,7 +156,7 @@
 			<configuration>
 				<archive>
 					<manifest>
-						<mainClass>com.yuri.mypet.MyPetApplication</mainClass>
+						<mainClass>com.yuri.mypet</mainClass>
 					</manifest>
 				</archive>
 			</configuration>
