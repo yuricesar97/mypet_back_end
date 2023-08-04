@@ -146,23 +146,41 @@
 	</dependencies>
 
 
+<!--	<build>-->
+<!--		<plugins>-->
+<!--		&lt;!&ndash; ... outros plugins ... &ndash;&gt;-->
+<!--		<plugin>-->
+<!--			<groupId>org.apache.maven.plugins</groupId>-->
+<!--			<artifactId>maven-jar-plugin</artifactId>-->
+<!--			<version>3.2.0</version>-->
+<!--			<configuration>-->
+<!--				<archive>-->
+<!--					<manifest>-->
+<!--						<mainClass>com.yuri.mypet.MyPetApplication</mainClass>-->
+<!--					</manifest>-->
+<!--				</archive>-->
+<!--			</configuration>-->
+<!--		</plugin>-->
+<!--	</plugins>-->
+<!--		<defaultGoal>package</defaultGoal>-->
+<!--	</build>-->
 	<build>
 		<plugins>
-		<!-- ... outros plugins ... -->
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-jar-plugin</artifactId>
-			<version>3.2.0</version>
-			<configuration>
-				<archive>
-					<manifest>
-						<mainClass>com.yuri.mypet.MyPetApplication</mainClass>
-					</manifest>
-				</archive>
-			</configuration>
-		</plugin>
-	</plugins>
-		<defaultGoal>package</defaultGoal>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.yuri.mypet.MyPetApplication</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
+
 
 </project>
